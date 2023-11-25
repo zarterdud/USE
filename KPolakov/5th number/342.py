@@ -9,15 +9,17 @@
 Полученная таким образом запись является пятнадцатеричной записью искомого числа R.
 Укажите минимальное число R, большее 700, которое может быть получено с помощью
 описанного алгоритма. В ответе запишите это число в десятичной системе счисления."""
-ans = 100000
+answer = 100000
 
 
 def dex_to_fifteen(value):
+    digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     ans = ""
     while value > 0:
-        ans += str(value % 15)
+        k = value % 15
+        ans = digits[k] + ans
         value //= 15
-    return ans[::-1]
+    return ans
 
 
 for n in range(15, 1000):
@@ -27,6 +29,6 @@ for n in range(15, 1000):
     else:
         n_fif += dex_to_fifteen(n % 15 * 13)
     r = int(n_fif, 15)
-    if r > 700 and ans > r:
-        ans = r
-print(ans)
+    if r > 700 and answer > r:
+        answer = r
+print(answer)
