@@ -16,9 +16,9 @@ for i in range(1000, 10000):
     val = [i1 + i2, i2 + i3, i3 + i4]
     val.pop(val.index(min(val)))
     if val[0] >= val[1]:
-        ans = int(str(val[0]) + str(val[1]))
+        ans = int(str(val[1]) + str(val[0]))
     else:
         ans = int(str(val[0]) + str(val[1]))
     if ans == 1315:
         summ.append(i)
-print(min(summ))
+print(max(summ))
