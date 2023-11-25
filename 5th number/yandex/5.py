@@ -11,14 +11,15 @@ import itertools
 
 ans = 0
 for n in range(300, 401):
-    mi = "123"
-    ma = "0"
+    mi = 123
+    ma = 0
     for i in itertools.permutations(str(n), r=2):
         if i[0] != "0":
-            if ma < "".join(i):
-                ma = "".join(i)
-            if mi > "".join(i):
-                mi = "".join(i)
-    if int(ma) - int(mi) == 20:
+            if ma < int("".join(i)):
+                ma = int("".join(i))
+            if mi > int("".join(i)):
+                mi = int("".join(i))
+        print(ma, mi)
+    if ma - mi == 20:
         ans += 1
 print(ans)
